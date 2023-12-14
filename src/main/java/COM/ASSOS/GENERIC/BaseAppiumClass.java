@@ -1,7 +1,6 @@
 package COM.ASSOS.GENERIC;
 
 import java.io.File;
-
 import java.net.URL;
 import java.time.Duration;
 
@@ -12,10 +11,9 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
-import com.generalstore.objectrepo.LoginPage;
-import com.generalstore.objectrepo.ProductPage;
-import com.generalstore.objectrepo.cartPage;
 
+
+import COM.ASSOS.OBJECTREPO.LoginPage;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
@@ -30,8 +28,7 @@ public class BaseAppiumClass {
 	public Fileutility futils=new Fileutility();
 	
 	public LoginPage  lp;
-	public ProductPage pp;
-	public cartPage   cp;
+	
 	public static AndroidDriver sdriver;
 	
 	
@@ -66,8 +63,7 @@ public void openApplication() throws Throwable
 	 gutilis=new GestureUtility(driver);
 	
 	 lp=new LoginPage(driver);
-	 pp=new ProductPage(driver);
-     cp=new cartPage(driver); 
+ 
      
      
 }
@@ -75,7 +71,7 @@ public void openApplication() throws Throwable
 @BeforeMethod
 public void setLogin() {
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-	lp.loginsetup("karthikeyan", gutilis, "India");
+	
 }
 
 
